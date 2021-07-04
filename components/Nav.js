@@ -24,7 +24,7 @@ const Nav = () => {
                 <a href="">Recipes</a>
                 <a href="">About</a>
             </div>
-            {/* Log in links div */}
+            {/* Login links div */}
             <div style={{
                 display: 'flex',
                 justifyContent: 'space-around',
