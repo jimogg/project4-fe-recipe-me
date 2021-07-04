@@ -16,22 +16,30 @@ const Nav = () => {
             {/* navigation links div*/}
             <div style={{
                 display: 'flex',
-                width: '25%',
-                maxWidth: '300px',
+                minWidth: '260px',
                 justifyContent: 'space-between',
             }}>
                 <a href="">Home</a>
-                <a href="">Recipes</a>
-                <a href="">About</a>
+                <a href="recipes">Recipes</a>
+                <a href="mykitchen">My Kitchen</a>
+                <a href="about">About</a>
             </div>
+
             {/* Login links div */}
             <div style={{
                 display: 'flex',
                 justifyContent: 'space-around',
                 width: '150px'
             }}>
-                <a href="">Log in</a>{' '}<a href="">Sign Up</a>
+                <a href="login">Log in</a>
+                <a href="signup">Sign Up</a>
             </div>
+            <style jsx>{`
+    a:hover{
+        color:'green';
+    }
+`}</style>
+
         </div>
     );
 };

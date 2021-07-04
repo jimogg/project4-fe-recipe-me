@@ -6,10 +6,7 @@ import About from '../components/About';
 
 const about = () => {
     return (
-        // <div>
-        // <Nav />
 
-        // </div>
         <div className={styles.container}>
             <Head>
                 <title>Recipe ME</title>
@@ -18,8 +15,10 @@ const about = () => {
             </Head>
             <Nav />
             <main className={styles.main}>
-                <p>Testing 123 main</p>
-                <About />
+                <div style={{ margin: '5px 15px' }}>
+                    <p>Read here to find out more about us.</p>
+                    <About />
+                </div>
             </main>
 
             <footer>
