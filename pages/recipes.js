@@ -13,8 +13,8 @@ const recipes = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Nav />
-            <main >
-                {/* outer div */}
+            <main style={{ background: '#ccc' }}>
+                {/* outer top div (bar) */}
                 <div style={{
                     display: 'flex',
                     flexDirection: 'row',
@@ -25,33 +25,44 @@ const recipes = () => {
                     {/* inner div (tab)1*/}
                     <div style={{
                         marginLeft: '20px',
-                        padding: '8px 15px',
+                        padding: '7px 15px',
                         background: '#CE3045',
                         background: 'white',
-                        fontWeight: 'bold',
-                        // color: 'white',
-                        borderRadius: '5px 5px 0 0',
+                        fontSize: '1.2em',
+                        // borderRadius: '5px 5px 0 0',
                         height: '32px'
                     }}>Recipes</div>
 
                     {/* inner div (tab)2*/}
                     <div style={{
                         marginLeft: '5px',
-                        padding: '8px 15px',
+                        padding: '6px 15px',
                         background: '#CE3045',
-                        fontWeight: 'bold',
-                        // color: 'white',
-                        borderRadius: '5px 5px 0 0',
+                        // fontWeight: 'bold',
+                        fontSize: '1.2em',
+                        // borderRadius: '5px 5px 0 0',
                         height: '32px'
-                    }}>My Collection</div>
+                    }}>My Kitchen</div>
+
+                    {/* inner div (tab)3*/}
+                    <div style={{
+                        marginLeft: '5px',
+                        padding: '8px 15px',
+                        background: '#8BC751',
+                        fontWeight: 'bold',
+                        // borderRadius: '5px 5px 0 0',
+                        height: '32px'
+                    }}>Chef Details</div>
 
                 </div>
                 <div style={{
 
                     display: 'flex',
                     flexDirection: 'row',
+                    justifyContent: 'space-evenly',
                     flexWrap: 'wrap',
                     padding: '15px',
+                    // background: '#CE3045',
                 }}>
                     <Recipes />
                 </div>

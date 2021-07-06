@@ -3,7 +3,7 @@ import RecipeCard from './RecipeCard';
 
 const Recipes = () => {
 
-    const url = 'http://localhost:8000/recipies/?format=json'
+    const url = 'http://localhost:8000/recipes/?format=json'
 
     const [recipe, setRecipe] = useState('')
 
@@ -17,19 +17,28 @@ const Recipes = () => {
             console.log(e)
             return (
                 <>
+                    {/* actual recipe card */}
                     <div style={{
-                        maxWidth: '300px',
-                        height: '350px',
-                        marginBottom: '20px',
-                        background: '#8BC751',
+                        // width: '250px',
+                        maxWidth: '450px',
+                        height: '300px',
+                        margin: '5px',
+                        // background: '#8BC751',
+                        // background: '#9E005D',
+                        background: '#CE3045',
                         padding: '15px',
-                        borderRadius: '0px 0px 18px'
+                        border: '1px solid #ccc',
+                        borderRadius: '3em',
+                        borderTop: '5px solid white',
+                        borderBottom: '1px solid white',
+                        borderLeft: '34px solid white',
+                        boxShadow: '5px 5px 8px 1px rgba(0,0,0,0.53)',
                     }}>
-
+                        {/* the details printed on the card */}
                         <div>
-                            <h3>{e.title}</h3>
-                            <p>By: {e.chef_name}</p>
-                            <p>{e.subtitle}</p>
+                            <h3 style={{ margin: '0', color: '#333' }}>{e.title}</h3>
+                            <p style={{ fontSize: '0.9rem', color: '#b2b2b2' }}>By: {e.chef_name}</p>
+                            <p style={{ fontWeight: '300', fontSize: '1.1rem' }}>{e.subtitle}</p>
                             {/* <p>{e.intro}</p>
                         <p>{e.steps}</p>
                         <p>{e.summary}</p> */}
@@ -52,9 +61,9 @@ const Recipes = () => {
     return (
 
 
-        <div>
+        <>
             {recipe}
-        </div>
+        </>
     );
 }
 
