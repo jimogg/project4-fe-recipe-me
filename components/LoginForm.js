@@ -6,6 +6,7 @@ const SignupForm = () => {
     const formFields = {}
 
     const [formData, setFormData] = useState(formFields)
+    const [message, setMessage] = useState('')
 
 
     const handleChange = (event) => {
@@ -15,7 +16,7 @@ const SignupForm = () => {
     function handleSubmit(event) {
         event.preventDefault();
 
-        const url = 'http://localhost:8000/users/'
+        const url = 'http://localhost:8000/token/login/'
         fetch(url, {
             method: 'POST',
             body: JSON.stringify(formData),
@@ -25,8 +26,11 @@ const SignupForm = () => {
         })
             .then((response) => response.json())
             .then((result) => {
-                console.log('Success:', result);
-                setProject(result)
+                console.log(result);
+                console.log(Object.keys(result)[0], Object.values(result)[0])
+                localStorage.setItem(Object.keys(result)[0], Object.values(result)[0])
+                // if token returned, save username
+                localStorage.setItem('user', formData.username)
             })
             .catch((error) => {
                 console.error('Error:', error);
@@ -40,8 +44,9 @@ const SignupForm = () => {
                 display: 'flex',
                 alignItems: 'center',
                 flexDirection: 'column',
-                background: '#8BC751',
-                height: '100vh',
+                // background: '#8BC751',
+                background: '#e6e6e6',
+                height: '90vh',
             }}>
 
             <h2>Please log in</h2>
@@ -77,10 +82,10 @@ const SignupForm = () => {
 
                 <br />
 
-                <input type="submit" value="submit" />
+                <input type="submit" value="submit" style={{ width: '5em' }} />
             </form>
             <p>Forgot password?</p>
-
+            <p>{message}</p>
         </div>
 
     );

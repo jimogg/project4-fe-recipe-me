@@ -2,6 +2,22 @@ import React from 'react';
 import Link from 'next/link'
 
 const Nav = () => {
+
+    // function login() {
+    //     if (localStorage.auth_token) {
+    //         return <>
+    //             <Link href="logout"><a>Log Out</a></Link>
+    //         </>
+
+    //     }
+    //     return <>
+    //         <Link href="login"><a>Log in</a></Link>
+    //         <Link href="signup"><a>Sign Up</a></Link>
+    //     </>
+
+    // }
+
+    // const loginNav = login()
     return (
         <div style={{
             display: 'flex',
@@ -32,14 +48,17 @@ const Nav = () => {
                 justifyContent: 'space-around',
                 width: '150px'
             }}>
+
+
                 <Link href="login"><a>Log in</a></Link>
                 <Link href="signup"><a>Sign Up</a></Link>
+                {/* <Link href="logout"><a>Log Out</a></Link> */}
+
+                {/* {loginNav} */}
+
             </div>
 
             {/* style jsx? */}
-            <style jsx>{`
-
-`}</style>
 
         </div>
     );

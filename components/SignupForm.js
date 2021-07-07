@@ -26,7 +26,7 @@ const SignupForm = () => {
             .then((response) => response.json())
             .then((result) => {
                 console.log('Success:', result);
-                setProject(result)
+                // setProject(result)
             })
             .catch((error) => {
                 console.error('Error:', error);
@@ -40,8 +40,9 @@ const SignupForm = () => {
                 display: 'flex',
                 alignItems: 'center',
                 flexDirection: 'column',
-                background: '#8BC751',
-                height: '100vh'
+                // background: '#8BC751',
+                background: '#e6e6e6',
+                height: '90vh'
             }}>
             <h2>Enter your information to sign up.</h2>
             <form onSubmit={handleSubmit}
@@ -73,15 +74,15 @@ const SignupForm = () => {
                     onChange={handleChange}
                     placeholder="" />
 
-                <label htmlFor="repassword">Retype Password</label>
-                <input id="repassword" type="password"
+                <label htmlFor="re_password">Retype Password</label>
+                <input id="re_password" type="password"
                     value={formData.githubUrl}
                     onChange={handleChange}
                     placeholder="" />
 
                 <br />
 
-                <input type="submit" value="submit" />
+                <input type="submit" value="submit" style={{ width: '5em' }} />
             </form>
             <p>{' '}</p>
         </div>

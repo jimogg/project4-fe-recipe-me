@@ -23,15 +23,15 @@ const Recipes = () => {
                         <a>
                             <div style={{
                                 // width: '250px',
-                                maxWidth: '450px',
+                                maxWidth: '700px',
                                 // height: '300px',
                                 margin: '5px',
                                 // background: '#8BC751',
                                 // background: '#9E005D',
-                                // background: 'white',
+                                background: 'white',
                                 padding: '15px',
                                 border: '1px solid #ccc',
-                                // borderRadius: '1em',
+                                borderRadius: '2em',
                                 borderTop: '2px solid white',
                                 borderBottom: '1px solid #8BC751',
                                 borderLeft: '15px solid #8BC751',

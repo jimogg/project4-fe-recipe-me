@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
-
+// This form is used to create a new recipe
 const CreateRecipeForm = () => {
 
-    const formFields = { chef_id: 2, chef_name: "Homer Simpson" }
-
+    // const formFields = { chef_id: 2, chef_name: "Homer Simpson" }
+    const formFields = {}
     const [formData, setFormData] = useState(formFields)
+    const [message, setMessage] = useState('')
 
 
     const handleChange = (event) => {
@@ -16,6 +17,8 @@ const CreateRecipeForm = () => {
         event.preventDefault();
 
         const url = 'http://localhost:8000/recipes/'
+        const token = localStorage.getItem('auth_token')
+        console.log(token)
         fetch(url, {
             method: 'POST',
             body: JSON.stringify(formData),
@@ -26,8 +29,8 @@ const CreateRecipeForm = () => {
         })
             .then((response) => response.json())
             .then((result) => {
-                console.log('Success:', result);
-                setProject(result)
+                console.log(result.detail);
+                setMessage(result.detail)
             })
             .catch((error) => {
                 console.error('Error:', error);
@@ -43,7 +46,7 @@ const CreateRecipeForm = () => {
                 flexDirection: 'column',
                 background: '#8BC751',
             }}>
-
+            <h2>Post a Recipe</h2>
             <form onSubmit={handleSubmit}
                 style={{
                     display: 'flex',
@@ -91,7 +94,7 @@ const CreateRecipeForm = () => {
 
                 <input type="submit" value="submit" />
             </form>
-
+            <p>{message}</p>
         </div>
 
     );
