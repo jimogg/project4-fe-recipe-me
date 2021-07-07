@@ -19,7 +19,7 @@ This project features a Nextjs frontend and a Django backend with Postgres for t
 - As a user I would like to be able to post a recipe for others to enjoy.
 - As a user I would like to be able to protect my submissions through a log-in system.
 - As a user I would like to be able to keep a list of my favorite users and their recipes.
-As a user I would like to be able to easily navigate the site.
+- As a user I would like to be able to easily navigate the site.
 ## Screenshots
 ![Screen Shot 2021-07-07 at 9 56 08 AM](https://user-images.githubusercontent.com/81941464/124776078-2730a380-df0d-11eb-92e0-28a0db324abd.png)
 ![Screen Shot 2021-07-07 at 9 42 26 AM](https://user-images.githubusercontent.com/81941464/124776216-40d1eb00-df0d-11eb-9576-879b0599a392.png)
