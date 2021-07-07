@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link'
 
 const Nav = () => {
     return (
@@ -19,10 +20,10 @@ const Nav = () => {
                 minWidth: '260px',
                 justifyContent: 'space-between',
             }}>
-                <a href="">Home</a>
-                <a href="recipes">Recipes</a>
-                <a href="mykitchen">My Kitchen</a>
-                <a href="about">About</a>
+                <Link href=""><a>Home</a></Link>
+                <Link href="recipes"><a>Recipes</a></Link>
+                <Link href="mykitchen"><a>My Kitchen</a></Link>
+                <Link href="about"><a>About</a></Link>
             </div>
 
             {/* Login links div */}
@@ -31,13 +32,13 @@ const Nav = () => {
                 justifyContent: 'space-around',
                 width: '150px'
             }}>
-                <a href="login">Log in</a>
-                <a href="signup">Sign Up</a>
+                <Link href="login"><a>Log in</a></Link>
+                <Link href="signup"><a>Sign Up</a></Link>
             </div>
+
+            {/* style jsx? */}
             <style jsx>{`
-    a:hover{
-        color:'green';
-    }
+
 `}</style>
 
         </div>

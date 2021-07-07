@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
 
-const CreateRecipeForm = () => {
+const SignupForm = () => {
 
-    const formFields = { chef_id: 2, chef_name: "Homer Simpson" }
+    const formFields = {}
 
     const [formData, setFormData] = useState(formFields)
 
@@ -15,13 +15,12 @@ const CreateRecipeForm = () => {
     function handleSubmit(event) {
         event.preventDefault();
 
-        const url = 'http://localhost:8000/recipes/'
+        const url = 'http://localhost:8000/users/'
         fetch(url, {
             method: 'POST',
             body: JSON.stringify(formData),
             headers: {
-                'Content-Type': 'application/json',
-                Authorization: `Token ${token}`
+                'Content-Type': 'application/json'
             }
         })
             .then((response) => response.json())
@@ -42,8 +41,9 @@ const CreateRecipeForm = () => {
                 alignItems: 'center',
                 flexDirection: 'column',
                 background: '#8BC751',
+                height: '100vh'
             }}>
-
+            <h2>Enter your information to sign up.</h2>
             <form onSubmit={handleSubmit}
                 style={{
                     display: 'flex',
@@ -55,46 +55,38 @@ const CreateRecipeForm = () => {
                     borderRadius: '10px'
                 }}>
 
-                <label htmlFor="title">Title of Recipe</label>
-                <input id="title" type="text"
+                <label htmlFor="username">Username</label>
+                <input id="username" type="text"
                     value={formData.title}
                     onChange={handleChange}
                     placeholder="" />
 
-                <label htmlFor="subtitle">Subtitle (descriptive)</label>
-                <input id="subtitle" type="text"
+                <label htmlFor="email">email</label>
+                <input id="email" type="email"
                     value={formData.author}
                     onChange={handleChange}
                     placeholder="" />
 
-                <label htmlFor="directions">Directions</label>
-                <input id="directions" type="text"
+                <label htmlFor="password">Password</label>
+                <input id="password" type="password"
                     value={formData.technologies}
                     onChange={handleChange}
                     placeholder="" />
 
-                <label htmlFor="steps">Steps</label>
-                <input id="steps" type="text"
+                <label htmlFor="repassword">Retype Password</label>
+                <input id="repassword" type="password"
                     value={formData.githubUrl}
                     onChange={handleChange}
                     placeholder="" />
-
-                <label htmlFor="summary">Summary</label>
-                <textarea id="summary"
-                    rows={4}
-                    cols={50}
-                    value={formData.description}
-                    onChange={handleChange}>
-                </textarea>
 
                 <br />
 
                 <input type="submit" value="submit" />
             </form>
-
+            <p>{' '}</p>
         </div>
 
     );
 };
 
-export default CreateRecipeForm;
+export default SignupForm;

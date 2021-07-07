@@ -58,7 +58,7 @@ const recipes = () => {
                 <div style={{
 
                     display: 'flex',
-                    flexDirection: 'row',
+                    flexDirection: 'column',
                     justifyContent: 'space-evenly',
                     flexWrap: 'wrap',
                     padding: '15px',

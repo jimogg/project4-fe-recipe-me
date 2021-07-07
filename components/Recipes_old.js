@@ -24,18 +24,18 @@ const Recipes = () => {
                             <div style={{
                                 // width: '250px',
                                 maxWidth: '450px',
-                                // height: '300px',
+                                height: '300px',
                                 margin: '5px',
                                 // background: '#8BC751',
                                 // background: '#9E005D',
-                                // background: 'white',
+                                background: '#CE3045',
                                 padding: '15px',
                                 border: '1px solid #ccc',
-                                // borderRadius: '1em',
-                                borderTop: '2px solid white',
-                                borderBottom: '1px solid #8BC751',
-                                borderLeft: '15px solid #8BC751',
-                                // boxShadow: '5px 5px 8px 1px rgba(0,0,0,0.53)',
+                                borderRadius: '3em',
+                                borderTop: '5px solid white',
+                                borderBottom: '1px solid white',
+                                borderLeft: '34px solid white',
+                                boxShadow: '5px 5px 8px 1px rgba(0,0,0,0.53)',
                             }}>
                                 {/* the details printed on the card */}
                                 <div>
