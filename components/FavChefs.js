@@ -38,11 +38,6 @@ const UserDetails = () => {
             <h3>My Favorite Chefs</h3>
             <p>{chef}</p>
 
-            {/* fetch details 
-            avatar, name, aboutme
-            edit user details            
-            */}
-
         </div>
     );
 };

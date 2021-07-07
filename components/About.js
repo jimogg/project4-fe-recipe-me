@@ -5,7 +5,7 @@ const About = () => {
         <div>
             <section>
                 <h3>About recipeME</h3>
-                <p>Culpa officia velit et exercitation ea. Culpa aute ullamco proident deserunt. Cillum eiusmod consectetur ullamco laboris cupidatat laborum minim ex eu nulla id non adipisicing. Dolore irure nisi culpa veniam. Culpa deserunt cillum in deserunt est commodo ad laboris. Sint est sint voluptate magna pariatur. Anim mollit consectetur sunt quis excepteur fugiat in Lorem Lorem in amet.</p>
+                <p>RecipeME is a site where any user can sign up and post recipes for the entire online community to enjoy. Signing up give you access to 'my kitchen' where you can track your favorite 'chefs' and create a cookbook of your favorite recipes found on the site! Upload your own recipes so others may delight in your culinary mastery.</p>
             </section>
         </div>
     );

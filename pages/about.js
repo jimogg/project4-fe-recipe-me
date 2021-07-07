@@ -15,8 +15,7 @@ const about = () => {
             </Head>
             <Nav />
             <main className={styles.main}>
-                <div style={{ margin: '5px 15px' }}>
-                    <p>Read here to find out more about us.</p>
+                <div style={{ margin: '5px 15px', height: '50vh', width: '65vw' }}>
                     <About />
                 </div>
             </main>
