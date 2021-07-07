@@ -51,7 +51,7 @@ const CreateRecipeForm = () => {
                 style={{
                     display: 'flex',
                     flexDirection: 'column',
-                    width: '100vw',
+                    width: '90vw',
                     maxWidth: '500px',
                     padding: '18px',
                     background: '#CE3045',
@@ -71,20 +71,24 @@ const CreateRecipeForm = () => {
                     placeholder="" />
 
                 <label htmlFor="directions">Directions</label>
-                <input id="directions" type="text"
+                <textarea id="directions"
+                    rows={8}
+                    cols={50}
                     value={formData.technologies}
-                    onChange={handleChange}
-                    placeholder="" />
+                    onChange={handleChange}>
+                </textarea>
 
                 <label htmlFor="steps">Steps</label>
-                <input id="steps" type="text"
+                <textarea id="steps"
+                    rows={8}
+                    cols={50}
                     value={formData.githubUrl}
-                    onChange={handleChange}
-                    placeholder="" />
+                    onChange={handleChange}>
+                </textarea>
 
                 <label htmlFor="summary">Summary</label>
                 <textarea id="summary"
-                    rows={4}
+                    rows={8}
                     cols={50}
                     value={formData.description}
                     onChange={handleChange}>
@@ -92,7 +96,7 @@ const CreateRecipeForm = () => {
 
                 <br />
 
-                <input type="submit" value="submit" />
+                <input type="submit" value="submit" style={{ width: '5em' }} />
             </form>
             <p>{message}</p>
         </div>

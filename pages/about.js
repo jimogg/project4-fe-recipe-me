@@ -22,7 +22,7 @@ const about = () => {
             </main>
 
             <footer>
-                <p>Testing 123 Footer.</p>
+                <p style={{ fontSize: 'small' }}>Copyright recipeME 2021</p>
             </footer>
         </div>
     );

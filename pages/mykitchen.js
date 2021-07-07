@@ -1,7 +1,8 @@
 import React from 'react';
 import Nav from '../components/Nav';
-import UserDetails from '../components/UserDetails';
-import UsersRecipes from '../components/UsersRecipes';
+import FavChefs from '../components/FavChefs';
+import FavRecipes from '../components/FavRecipes';
+import Link from 'next/link';
 
 const mykitchen = () => {
     return (
@@ -16,21 +17,30 @@ const mykitchen = () => {
                     // gridTemplateRows: '1fr 3fr 1fr'
                 }}>
 
+                    {/* Left side pane with avatar picture */}
                     <div style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
                         background: '#8BC751',
-                        padding: '10px'
+                        padding: '10px 0'
                     }}>
-                        <div style={{
+                        <div className='avatar' style={{
+                            marginTop: '15px',
                             background: 'white',
+                            backgroundImage: 'url(https://team-j-names-media.s3.us-east-2.amazonaws.com/Ratatouille_sm.jpg)',
+                            backgroundRepeat: 'no-repeat',
+                            backgroundSize: 'cover',
                             width: '160px',
                             height: '160px',
                             border: '5px solid #CE3045',
                             borderRadius: '50%',
-                        }}>avatar</div>
+                        }}>{' '}</div>
 
-                        <h3>This is your kitchen</h3>
+                        <h2>This is your kitchen</h2>
 
-                        <p style={{ fontSize: '0.9rem' }}>You can view your saved recipes and stuff.</p>
+                        <p style={{ fontSize: '0.9rem', margin: '0 15px' }}>You can view your saved recipes, favorite chefs and more here.</p>
+                        <FavChefs />
                     </div>
                     <div style={{
                         // background: 'gray',
@@ -41,18 +51,25 @@ const mykitchen = () => {
                             background: 'black',
                             color: 'white',
                             border: '1px solid #E6E6E6',
-                            // padding: '10px',
-                            borderRadius: '15px 15px 0 0'
-                        }}><div style={{ padding: '0 10px' }}><p>Whaaaaaat</p></div>
+                            borderRadius: '15px 15px 0 0',
+                        }}><div style={{ padding: '0 10px' }}>
+                                <h1>My Kitchen</h1>
+                                <Link href="createrecipe">
+                                    <a>Create a new recipe |</a></Link>
+                                <Link href="recipes">
+                                    <a>{' '}Browse recipes</a></Link>
+
+                            </div>
+                            {/* main article body */}
                             <section style={{
                                 background: 'white',
                                 color: 'black',
-                                padding: '15px',
+                                padding: '15px 30px',
                                 marginTop: '30px',
+                                // height: '80vh',
                                 borderRadius: '15px 15px 0 0'
                             }}>
-                                <UserDetails />
-                                <UsersRecipes />
+                                <FavRecipes />
                             </section>
                         </div>
                     </div>
@@ -60,17 +77,8 @@ const mykitchen = () => {
                         background: '#CE3045',
                         padding: '10px'
                     }}>
-                        <p>This is the right hand side div</p>
+
                     </div>
-
-
-                    {/* want a list of my posted recipes (by chef_id)
-            a list of my saved recipes
-            
-            url/chefs/:id .... returns an object with name and array of recipies
-
-            map over it
-            */}
 
                 </div>
             </div>

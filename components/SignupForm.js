@@ -26,7 +26,7 @@ const SignupForm = () => {
             .then((response) => response.json())
             .then((result) => {
                 console.log('Success:', result);
-                // setProject(result)
+
             })
             .catch((error) => {
                 console.error('Error:', error);
@@ -84,7 +84,7 @@ const SignupForm = () => {
 
                 <input type="submit" value="submit" style={{ width: '5em' }} />
             </form>
-            <p>{' '}</p>
+
         </div>
 
     );

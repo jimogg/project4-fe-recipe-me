@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Recipes from '../components/Recipes'
 
-const RecipeDetails = () => {
+const RecipeDetail = (props) => {
 
-    const url = 'http://localhost:8000/recipes/4/?format=json'
+    const url = `http://localhost:8000/recipes/${props.id}/?format=json`
 
     const [recipe, setRecipe] = useState('')
 
@@ -95,4 +95,4 @@ const RecipeDetails = () => {
 };
 
 
-export default RecipeDetails;
+export default RecipeDetail;

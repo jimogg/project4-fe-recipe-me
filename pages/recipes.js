@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import Nav from '../components/Nav'
-import Recipes from '../components/Recipes'
+import styles from '../styles/Home.module.css';
+import Nav from '../components/Nav';
+import Recipes from '../components/Recipes';
 
 const recipes = () => {
     return (
@@ -28,13 +28,13 @@ const recipes = () => {
                         padding: '7px 15px',
                         background: '#CE3045',
                         background: 'white',
-                        fontSize: '1.2em',
+                        // fontSize: '1.2em',
                         // borderRadius: '5px 5px 0 0',
                         height: '32px'
                     }}>Recipes</div>
 
                     {/* inner div (tab)2*/}
-                    <div style={{
+                    {/* <div style={{
                         marginLeft: '5px',
                         padding: '6px 15px',
                         background: '#CE3045',
@@ -42,23 +42,23 @@ const recipes = () => {
                         fontSize: '1.2em',
                         // borderRadius: '5px 5px 0 0',
                         height: '32px'
-                    }}>My Kitchen</div>
+                    }}>My Kitchen</div> */}
 
                     {/* inner div (tab)3*/}
                     <div style={{
-                        marginLeft: '5px',
+                        marginLeft: '2px',
                         padding: '8px 15px',
                         background: '#8BC751',
                         fontWeight: 'bold',
                         // borderRadius: '5px 5px 0 0',
                         height: '32px'
-                    }}>Chef Details</div>
+                    }}>Discover something new</div>
 
                 </div>
                 <div style={{
 
                     display: 'flex',
-                    flexDirection: 'column',
+                    // flexDirection: 'column',
                     justifyContent: 'space-evenly',
                     flexWrap: 'wrap',
                     padding: '15px',
@@ -69,7 +69,7 @@ const recipes = () => {
             </main>
 
             <footer>
-                <p>Testing 123 Footer.</p>
+                <p>{' '}</p>
             </footer>
         </div>
     );

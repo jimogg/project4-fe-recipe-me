@@ -13,7 +13,6 @@ const Recipes = () => {
     async function fetchRecipes() {
         const response = await fetch(url);
         const recipes = await response.json();
-        // console.log(recipes);
         const recipeInfo = recipes.map((e) => {
             console.log(e)
             return (
@@ -22,9 +21,9 @@ const Recipes = () => {
                     <Link href={`/recipedetails/${e.id}/`}>
                         <a>
                             <div style={{
-                                // width: '250px',
+                                width: '250px',
                                 maxWidth: '700px',
-                                // height: '300px',
+                                height: '300px',
                                 margin: '5px',
                                 // background: '#8BC751',
                                 // background: '#9E005D',

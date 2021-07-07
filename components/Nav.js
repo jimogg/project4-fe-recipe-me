@@ -28,7 +28,7 @@ const Nav = () => {
             height: '50px'
         }}>
 
-            <div>LOGO</div>
+            <div style={{ marginLeft: '15px' }}><h2>RecipeME</h2></div>
 
             {/* navigation links div*/}
             <div style={{
