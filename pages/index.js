@@ -13,7 +13,7 @@ export default function Home() {
       </Head>
       <Nav />
       <main className={styles.main}>
-        <p>Testing 123 main</p>
+        <p>Homepage</p>
       </main>
 
       <footer>

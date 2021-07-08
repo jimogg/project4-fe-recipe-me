@@ -16,8 +16,6 @@ const RecipeDetails = () => {
             <div className='container' style={{
                 display: 'grid',
                 gridTemplateColumns: '1fr 3fr 1fr',
-                // alignItems: 'center',
-                // alignContent: 'center',
                 justifyItems: 'center',
                 background: '#ccc',
                 padding: '15px'
