@@ -3,21 +3,28 @@ import Link from 'next/link'
 
 const Nav = () => {
 
-    // function login() {
-    //     if (localStorage.auth_token) {
-    //         return <>
-    //             <Link href="logout"><a>Log Out</a></Link>
-    //         </>
+    let userGreeting = ''
+    function login() {
 
-    //     }
-    //     return <>
-    //         <Link href="login"><a>Log in</a></Link>
-    //         <Link href="signup"><a>Sign Up</a></Link>
-    //     </>
 
-    // }
+        if (typeof window !== 'undefined') {
 
-    // const loginNav = login()
+            if (localStorage.getItem('auth_token')) {
+                userGreeting = `Hi ${localStorage.getItem('user')}!`
+                return <>
+                    <Link href="logout"><a>Log Out</a></Link>
+                </>
+
+            }
+            return <>
+                <Link href="login"><a>Log in</a></Link>
+                <Link href="signup"><a>Sign Up</a></Link>
+            </>
+        }
+    }
+
+    const loginNav = login()
+
     return (
         <div style={{
             display: 'flex',
@@ -42,6 +49,7 @@ const Nav = () => {
                 <Link href="about"><a>About</a></Link>
             </div>
 
+            <div style={{ padding: '0 5px', color: 'gray' }}>{userGreeting}</div>
             {/* Login links div */}
             <div style={{
                 display: 'flex',
@@ -50,15 +58,13 @@ const Nav = () => {
             }}>
 
 
-                <Link href="login"><a>Log in</a></Link>
-                <Link href="signup"><a>Sign Up</a></Link>
+                {/* <Link href="login"><a>Log in</a></Link>
+                <Link href="signup"><a>Sign Up</a></Link> */}
                 {/* <Link href="logout"><a>Log Out</a></Link> */}
 
-                {/* {loginNav} */}
+                {loginNav}
 
             </div>
-
-            {/* style jsx? */}
 
         </div>
     );
