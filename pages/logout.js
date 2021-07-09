@@ -13,7 +13,7 @@ const Loggedout = () => {
         }
 
     })();
-    setTimeout(() => { window.location.href = '/' }, 3000)
+    // setTimeout(() => { window.location.href = '/' }, 500)
 
     return (
         <>
@@ -25,8 +25,8 @@ const Loggedout = () => {
                 </Head>
                 <Nav />
                 <main className={styles.main}>
-                    <p>You have successfully logged out!</p>
-                    <p style={{ fontSize: '14px' }}>Redirecting to homepage...</p>
+                    <p style={{ fontSize: '1.5em' }}>You have successfully logged out!</p>
+                    {/* <p style={{ margin: '0' }}>Redirecting to homepage...</p> */}
                 </main>
 
                 <footer>
