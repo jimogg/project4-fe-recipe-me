@@ -13,7 +13,10 @@ const recipes = () => {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Nav />
-            <main style={{ background: '#ccc' }}>
+            <main style={{
+                background: '#ccc',
+                borderTop: '1px solid #8BC751',
+            }}>
                 {/* outer top div (bar) */}
                 <div style={{
                     display: 'flex',
