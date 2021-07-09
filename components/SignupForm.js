@@ -40,7 +40,7 @@ const SignupForm = () => {
                 setUsernameErr('')
                 setEmailErr('')
                 setMessage('Congratulations! You have sucessfully created an account!')
-                setTimeout(() => { window.location.href = "/login" }, 3000)
+                // setTimeout(() => { window.location.href = "/login" }, 3000)
             }
 
 
