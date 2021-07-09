@@ -10,7 +10,7 @@ const Nav = () => {
         if (typeof window !== 'undefined') {
 
             if (localStorage.getItem('auth_token')) {
-                userGreeting = `Hi ${localStorage.getItem('user')}!`
+                userGreeting = `Bon apetit ${localStorage.getItem('user')}!`
                 return <>
                     <Link href="logout"><a>Log Out</a></Link>
                 </>
@@ -40,6 +40,7 @@ const Nav = () => {
             {/* navigation links div*/}
             <div style={{
                 display: 'flex',
+                margin: '0 5px',
                 minWidth: '260px',
                 justifyContent: 'space-between',
             }}>
@@ -49,12 +50,15 @@ const Nav = () => {
                 <Link href="about"><a>About</a></Link>
             </div>
 
+            {/* display a greeting with username */}
             <div style={{ padding: '0 5px', color: 'gray' }}>{userGreeting}</div>
-            {/* Login links div */}
+
+            {/* Login links */}
             <div style={{
                 display: 'flex',
                 justifyContent: 'space-around',
-                width: '150px'
+                width: '150px',
+                marginRight: '5px'
             }}>
 
 

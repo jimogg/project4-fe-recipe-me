@@ -4,8 +4,9 @@ import RecipeCard from './RecipeCard';
 
 const Recipes = () => {
     const deployedUrl = 'https://nameless-harbor-22439.herokuapp.com/'
+    const devUrl = 'http://localhost:8000/'
 
-    const url = `${deployedUrl}recipes/?format=json`
+    const url = `${devUrl}recipes/?format=json`
 
     const [recipe, setRecipe] = useState('')
 

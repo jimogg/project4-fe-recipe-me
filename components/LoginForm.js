@@ -7,6 +7,9 @@ const SignupForm = () => {
 
     const [formData, setFormData] = useState(formFields)
     const [message, setMessage] = useState('')
+    const [usernameErr, setUsernameErr] = useState('')
+    const [emailErr, setEmailErr] = useState('')
+    const [passwordErr, setPasswordErr] = useState('')
 
 
     const handleChange = (event) => {
@@ -27,10 +30,26 @@ const SignupForm = () => {
             .then((response) => response.json())
             .then((result) => {
                 console.log(result);
-                console.log(Object.keys(result)[0], Object.values(result)[0])
-                localStorage.setItem(Object.keys(result)[0], Object.values(result)[0])
-                // if token returned, save username
-                localStorage.setItem('user', formData.username)
+                // if login is successful
+                if (result.auth_token) {
+                    setMessage('SUCCESSFUL LOGIN! Redirecting to homepage...')
+                    console.log(Object.keys(result)[0], Object.values(result)[0])
+                    localStorage.setItem(Object.keys(result)[0], Object.values(result)[0])
+                    // if token returned, save username
+                    localStorage.setItem('user', formData.username)
+                    setTimeout(() => { window.location.href = '/' }, 2000)
+                }
+
+                for (const property in result) {
+                    console.log(result)
+                    if (property === 'username') setUsernameErr(result[property])
+                    else if (property === 'email') setEmailErr(result[property])
+                    else if (property === 'password') setPasswordErr(result[property])
+                    else if (property === 'non_field_errors') setMessage(result[property])
+
+                }
+
+
             })
             .catch((error) => {
                 console.error('Error:', error);
@@ -62,19 +81,19 @@ const SignupForm = () => {
                     borderRadius: '10px'
                 }}>
 
-                <label htmlFor="username">Username</label>
+                <label htmlFor="username">Username {usernameErr}</label>
                 <input id="username" type="text"
                     value={formData.title}
                     onChange={handleChange}
                     placeholder="" />
 
-                <label htmlFor="email">email</label>
+                <label htmlFor="email">email {emailErr}</label>
                 <input id="email" type="email"
                     value={formData.author}
                     onChange={handleChange}
                     placeholder="" />
 
-                <label htmlFor="password">Password</label>
+                <label htmlFor="password">Password {passwordErr}</label>
                 <input id="password" type="password"
                     value={formData.technologies}
                     onChange={handleChange}
@@ -84,8 +103,8 @@ const SignupForm = () => {
 
                 <input type="submit" value="submit" style={{ width: '5em' }} />
             </form>
-            <p>Forgot password?</p>
-            <p>{message}</p>
+            <p style={{ fontSize: '14px' }}>{message}</p>
+
         </div>
 
     );
