@@ -1,12 +1,12 @@
 import React from 'react';
-import Form from '../components/Form';
+import CreateRecipeForm from '../components/CreateRecipeForm';
 import Nav from '../components/Nav';
 
 const createrecipe = () => {
     return (
         <div>
             <Nav />
-            <Form />
+            <CreateRecipeForm />
         </div>
     );
 };
