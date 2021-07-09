@@ -37,7 +37,7 @@ const mykitchen = () => {
                             borderRadius: '50%',
                         }}>{' '}</div>
 
-                        <h2>This is your kitchen</h2>
+                        <h2 style={{ margin: '20px 10px' }}>This is your kitchen</h2>
 
                         <p style={{ fontSize: '0.9rem', margin: '0 15px' }}>You can view your saved recipes, favorite chefs and more here.</p>
                         <FavChefs />
