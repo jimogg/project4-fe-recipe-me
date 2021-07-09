@@ -71,7 +71,6 @@ const SignupForm = () => {
 
     return (
         <>
-            <div className='signupSuccess'>WELCOME!</div>
             <div className="formWrapper"
                 style={{
                     display: 'flex',
