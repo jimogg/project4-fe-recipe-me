@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { API_URL } from '../config';
 
 
 const SignupForm = () => {
@@ -19,7 +20,8 @@ const SignupForm = () => {
     function handleSubmit(event) {
         event.preventDefault();
 
-        const url = 'http://localhost:8000/token/login/'
+        const url = `${API_URL}/token/login/`
+        console.log(url)
         fetch(url, {
             method: 'POST',
             body: JSON.stringify(formData),
