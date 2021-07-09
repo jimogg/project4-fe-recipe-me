@@ -1,0 +1,1 @@
+export const API_URL = window.location.hostname === 'localhost' ? 'http://localhost:8000' : 'https://team-j-name-project-be.herokuapp.com'
