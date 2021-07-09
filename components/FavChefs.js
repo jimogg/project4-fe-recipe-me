@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import {API_URL} from '../config'
 
 const UserDetails = () => {
 
-    const url = `http://localhost:8000/chefs/?format=json`
+    const url = `${API_URL}/chefs/?format=json`
 
     const [chef, setChef] = useState('')
 

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { API_URL } from '../config';
 
 
 const SignupForm = () => {
@@ -16,7 +17,7 @@ const SignupForm = () => {
     const handleChange = (event) => {
         setFormData({ ...formData, [event.target.id]: event.target.value })
     }
-    const url = 'http://localhost:8000/users/'
+    const url = `${API_URL}/users/`
 
     async function signUp() {
         const response = await fetch(url, {

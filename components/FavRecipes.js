@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { API_URL } from '../config';
 
 const FavRecipes = () => {
 
 
-    const url = 'http://localhost:8000/recipes/?format=json'
+    const url = `${API_URL}/recipes/?format=json`
 
     const [recipes, setRecipes] = useState('')
 

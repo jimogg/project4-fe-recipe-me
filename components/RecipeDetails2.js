@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Recipes from '../components/Recipes'
+import { API_URL } from '../config';
 
 const RecipeDetail = (props) => {
 
-    const url = `http://localhost:8000/recipes/${props.id}/?format=json`
+    const url = `${API_URL}/recipes/${props.id}/?format=json`
 
     const [recipe, setRecipe] = useState('')
 

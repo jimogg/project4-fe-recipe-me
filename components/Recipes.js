@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import RecipeCard from './RecipeCard';
+import { API_URL } from '../config';
 
 const Recipes = () => {
-    const deployedUrl = 'https://nameless-harbor-22439.herokuapp.com/'
-    const devUrl = 'http://localhost:8000/'
+    const url = `${API_URL}/recipes`
+    // const devUrl = 'http://localhost:8000/'
 
     const url = `${devUrl}recipes/?format=json`
 
