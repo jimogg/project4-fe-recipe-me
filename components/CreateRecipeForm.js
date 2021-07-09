@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { API_URL } from '../config';
 
 // This form is used to create a new recipe
 const CreateRecipeForm = () => {
@@ -16,7 +17,7 @@ const CreateRecipeForm = () => {
     function handleSubmit(event) {
         event.preventDefault();
 
-        const url = 'http://localhost:8000/recipes/'
+        const url = `${API_URL}/recipes/`
         const token = localStorage.getItem('auth_token')
         console.log(token)
         fetch(url, {

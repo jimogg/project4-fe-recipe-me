@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Recipes from '../components/Recipes'
+import { API_URL } from '../config';
 
 const RecipeDetails = () => {
 
-    const url = 'http://localhost:8000/recipes/4/?format=json'
-
+    const url = `${API_URL}/recipes/4/?format=json`
     const [recipe, setRecipe] = useState('')
 
     async function fetchRecipes() {
@@ -20,12 +20,13 @@ const RecipeDetails = () => {
                 background: '#ccc',
                 padding: '15px'
             }}>
+                {/* side div */}
                 <div style={{
                     marginRight: '15px',
                     padding: '15px',
                     background: '#CE3045',
                     border: '1px solid #ccc',
-                    borderRadius: '10px',
+                    borderRadius: '15px',
                     maxWidth: '300px',
                 }}>
                     <h3>More recipes</h3>
