@@ -13,7 +13,10 @@ const Loggedout = () => {
         }
 
     })();
-    // setTimeout(() => { window.location.href = '/' }, 500)
+
+    if (typeof window !== 'undefined') {
+        setTimeout(() => { window.location.href = '/' }, 1000)
+    }
 
     return (
         <>
