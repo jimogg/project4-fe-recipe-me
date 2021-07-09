@@ -7,20 +7,20 @@ const Nav = () => {
     function login() {
 
 
-        // if (typeof window !== 'undefined') {
+        if (typeof window !== 'undefined') {
 
-        if (localStorage.getItem('auth_token')) {
-            userGreeting = `Bon Appétit ${localStorage.getItem('user')}!`
+            if (localStorage.getItem('auth_token')) {
+                userGreeting = `Bon Appétit ${localStorage.getItem('user')}!`
+                return <>
+                    <Link href="logout"><a>Log Out</a></Link>
+                </>
+
+            }
             return <>
-                <Link href="logout"><a>Log Out</a></Link>
+                <Link href="login"><a>Log in</a></Link>
+                <Link href="signup"><a>Sign Up</a></Link>
             </>
-
         }
-        return <>
-            <Link href="login"><a>Log in</a></Link>
-            <Link href="signup"><a>Sign Up</a></Link>
-        </>
-        // }
     }
 
     const loginNav = login()
