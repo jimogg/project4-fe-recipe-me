@@ -10,7 +10,7 @@ const Nav = () => {
         if (typeof window !== 'undefined') {
 
             if (localStorage.getItem('auth_token')) {
-                userGreeting = `Bon apetit ${localStorage.getItem('user')}!`
+                userGreeting = `Bon Appétit ${localStorage.getItem('user')}!`
                 return <>
                     <Link href="logout"><a>Log Out</a></Link>
                 </>
