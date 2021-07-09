@@ -18,24 +18,27 @@ const CreateRecipeForm = () => {
         event.preventDefault();
 
         const url = `${API_URL}/recipes/`
-        const token = localStorage.getItem('auth_token')
-        console.log(token)
-        fetch(url, {
-            method: 'POST',
-            body: JSON.stringify(formData),
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: `Token ${token}`
-            }
-        })
-            .then((response) => response.json())
-            .then((result) => {
-                console.log(result.detail);
-                setMessage(result.detail)
+        if (typeof window !== 'undefined') {
+
+            const token = localStorage.getItem('auth_token')
+            console.log(token)
+            fetch(url, {
+                method: 'POST',
+                body: JSON.stringify(formData),
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `Token ${token}`
+                }
             })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
+                .then((response) => response.json())
+                .then((result) => {
+                    console.log(result.detail);
+                    setMessage(result.detail)
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
     };
 
 

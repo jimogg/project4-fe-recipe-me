@@ -24,22 +24,26 @@ const UpdateForm = ({ project, setProject }) => {
     function handleSubmit(event) {
         event.preventDefault();
         const url = `${API_URL}/projects/${project._id}`
-        fetch(url, {
-            method: 'PUT',
-            body: JSON.stringify(formData),
-            headers: {
-                // 'Authorization': `Bearer ${window.localStorage.getItem('token')}`,
-                'Content-Type': 'application/json'
-            }
-        })
-            .then((response) => response.json())
-            .then((result) => {
-                console.log('Success:', result);
-                setProject(result)
+
+        if (typeof window !== 'undefined') {
+
+            fetch(url, {
+                method: 'PUT',
+                body: JSON.stringify(formData),
+                headers: {
+                    'Authorization': `Token ${window.localStorage.getItem('token')}`,
+                    'Content-Type': 'application/json'
+                }
             })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
+                .then((response) => response.json())
+                .then((result) => {
+                    console.log('Success:', result);
+                    setProject(result)
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
     };
 
     if (!project) {

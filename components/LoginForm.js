@@ -22,40 +22,44 @@ const SignupForm = () => {
 
         const url = `${API_URL}/token/login/`
         console.log(url)
-        fetch(url, {
-            method: 'POST',
-            body: JSON.stringify(formData),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-            .then((response) => response.json())
-            .then((result) => {
-                console.log(result);
-                // if login is successful
-                if (result.auth_token) {
-                    setMessage('SUCCESSFUL LOGIN! Redirecting to homepage...')
-                    console.log(Object.keys(result)[0], Object.values(result)[0])
-                    localStorage.setItem(Object.keys(result)[0], Object.values(result)[0])
-                    // if token returned, save username
-                    localStorage.setItem('user', formData.username)
-                    // setTimeout(() => { window.location.href = '/' }, 2000)
+
+        if (typeof window !== 'undefined') {
+
+            fetch(url, {
+                method: 'POST',
+                body: JSON.stringify(formData),
+                headers: {
+                    'Content-Type': 'application/json'
                 }
-
-                for (const property in result) {
-                    console.log(result)
-                    if (property === 'username') setUsernameErr(result[property])
-                    else if (property === 'email') setEmailErr(result[property])
-                    else if (property === 'password') setPasswordErr(result[property])
-                    else if (property === 'non_field_errors') setMessage(result[property])
-
-                }
-
-
             })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
+                .then((response) => response.json())
+                .then((result) => {
+                    console.log(result);
+                    // if login is successful
+                    if (result.auth_token) {
+                        setMessage('SUCCESSFUL LOGIN! Redirecting to homepage...')
+                        console.log(Object.keys(result)[0], Object.values(result)[0])
+                        localStorage.setItem(Object.keys(result)[0], Object.values(result)[0])
+                        // if token returned, save username
+                        localStorage.setItem('user', formData.username)
+                        setTimeout(() => { window.location.href = '/' }, 2000)
+                    }
+
+                    for (const property in result) {
+                        console.log(result)
+                        if (property === 'username') setUsernameErr(result[property])
+                        else if (property === 'email') setEmailErr(result[property])
+                        else if (property === 'password') setPasswordErr(result[property])
+                        else if (property === 'non_field_errors') setMessage(result[property])
+
+                    }
+
+
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
     };
 
 
