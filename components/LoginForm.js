@@ -39,7 +39,7 @@ const SignupForm = () => {
                     localStorage.setItem(Object.keys(result)[0], Object.values(result)[0])
                     // if token returned, save username
                     localStorage.setItem('user', formData.username)
-                    setTimeout(() => { window.location.href = '/' }, 2000)
+                    // setTimeout(() => { window.location.href = '/' }, 2000)
                 }
 
                 for (const property in result) {
