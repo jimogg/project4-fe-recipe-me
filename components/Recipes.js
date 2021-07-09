@@ -4,10 +4,8 @@ import RecipeCard from './RecipeCard';
 import { API_URL } from '../config';
 
 const Recipes = () => {
-    const url = `${API_URL}/recipes`
-    // const devUrl = 'http://localhost:8000/'
 
-    const url = `${devUrl}recipes/?format=json`
+    const url = `${API_URL}/recipes/?format=json`
 
     const [recipe, setRecipe] = useState('')
 
