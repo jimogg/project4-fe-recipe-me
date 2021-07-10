@@ -13,7 +13,9 @@ export default function Home() {
       </Head>
       <Nav />
       <main className={styles.main}>
-        <p>Homepage</p>
+        <p style={{ fontSize: '2em' }}>Welcome to</p>
+        <p style={{ fontSize: '7em', fontWeight: 'bold', margin: '0' }}>RecipeME</p>
+        <p style={{ fontSize: '1.5em' }}>Where you can find recipes that will delight your senses.</p>
       </main>
 
       <footer>
