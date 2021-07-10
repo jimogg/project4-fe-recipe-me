@@ -2,6 +2,8 @@
 ## Description
 This app allows users to post recipes online for anyone to view and use. Users can create an account and log in to be able to post recipes and save their favorite recipes from other users of the site.
 
+- [Deployed frontend](https://project4-fe-recipe-me.vercel.app/)
+- [Deployed backend](https://nameless-harbor-22439.herokuapp.com/)
 ## Technologies Used
 ### frontend
 - Nextjs
