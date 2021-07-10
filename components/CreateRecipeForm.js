@@ -27,6 +27,7 @@ const CreateRecipeForm = () => {
                 body: JSON.stringify(formData),
                 headers: {
                     'Content-Type': 'application/json',
+                    'Accept': 'application/json',
                     Authorization: `Token ${token}`
                 }
             })
@@ -50,7 +51,7 @@ const CreateRecipeForm = () => {
                 flexDirection: 'column',
                 background: '#8BC751',
             }}>
-            <h2>Post a Recipe</h2>
+            <h1>add a new recipe</h1>
             <form onSubmit={handleSubmit}
                 style={{
                     display: 'flex',
