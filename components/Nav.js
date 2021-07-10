@@ -44,7 +44,7 @@ const Nav = () => {
                 minWidth: '260px',
                 justifyContent: 'space-between',
             }}>
-                <Link href=""><a>Home</a></Link>
+                <Link href="/"><a>Home</a></Link>
                 <Link href="recipes"><a>Recipes</a></Link>
                 <Link href="mykitchen"><a>My Kitchen</a></Link>
                 <Link href="about"><a>About</a></Link>
