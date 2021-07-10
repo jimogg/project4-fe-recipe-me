@@ -39,10 +39,11 @@ const RecipeDetails = () => {
                     color: 'white',
                     border: '1px solid #E6E6E6',
                     // padding: '10px',
-                    borderRadius: '15px 15px 0 0'
+                    // borderRadius: '15px 15px 0 0'
                 }}>
                     <div style={{ padding: '0 10px' }}>
-                        {/* <h2>{recipes.title}</h2> */}
+                        <h2 style={{ marginBottom: '0' }}>{recipes.title}</h2>
+                        <p style={{ margin: '0', fontSize: '0.9rem', color: '#777' }}>from: {recipes.chef_name}</p>
                     </div>
 
                     {/* the selected recipe is displayed */}
@@ -51,13 +52,12 @@ const RecipeDetails = () => {
                         padding: '35px 15px',
                         background: 'white',
                         color: 'black',
-                        marginTop: '30px',
+                        marginTop: '20px',
                         borderRadius: '15px 15px 0 0'
                     }}>
 
                         <div>
-                            <h2 style={{ margin: '0', color: '#333' }}>{recipes.title}</h2>
-                            <p style={{ fontSize: '0.9rem', color: '#b2b2b2' }}>By: {recipes.chef_name}</p>
+                            {/* <h2 style={{ margin: '0', color: '#333' }}>{recipes.title}</h2> */}
                             <p style={{ fontWeight: '300', fontSize: '1.1rem' }}>{recipes.subtitle}</p>
                             <h3>Preparations</h3>
                             <p>{recipes.intro}</p>
